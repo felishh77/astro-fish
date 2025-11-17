@@ -6,9 +6,9 @@
     margin: 0;
     padding: 0;
 
-    color: var(--charm-font-color);
+    color: var(--fish-font-color);
     background: var(--light-noise) repeat scroll 0% 0%
-      var(--charm-background-color);
+      var(--fish-background-color);
 
     scroll-behavior: smooth;
 
@@ -42,11 +42,11 @@
   }
 
   ::selection {
-    color: var(--charm-highlight-color);
+    color: var(--fish-highlight-color);
   }
 
   a {
-    color: var(--charm-highlight-color);
+    color: var(--fish-highlight-color);
     text-decoration: none;
     position: relative;
     transition: color 0.3s ease;
@@ -65,7 +65,7 @@
       inset: auto 0 0;
       height: 2px;
       opacity: 0.2;
-      background-color: var(--charm-highlight-color);
+      background-color: var(--fish-highlight-color);
       transform: scaleX(0);
       transform-origin: right;
       transition:
@@ -127,7 +127,7 @@
         height: 1.5rem;
 
         --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M6.6 11.397c0-2.726 0-4.089.843-4.936c.844-.847 2.201-.847 4.917-.847h2.88c2.715 0 4.073 0 4.916.847c.844.847.844 2.21.844 4.936v4.82c0 2.726 0 4.089-.844 4.936c-.843.847-2.201.847-4.916.847h-2.88c-2.716 0-4.073 0-4.917-.847s-.843-2.21-.843-4.936z'/%3E%3Cpath fill='%23000' d='M4.172 3.172C3 4.343 3 6.229 3 10v2c0 3.771 0 5.657 1.172 6.828c.617.618 1.433.91 2.62 1.048c-.192-.84-.192-1.996-.192-3.66v-4.819c0-2.726 0-4.089.843-4.936c.844-.847 2.201-.847 4.917-.847h2.88c1.652 0 2.8 0 3.638.19c-.138-1.193-.43-2.012-1.05-2.632C16.657 2 14.771 2 11 2S5.343 2 4.172 3.172' opacity='0.5'/%3E%3C/svg%3E");
-        background-color: var(--charm-font-color);
+        background-color: var(--fish-font-color);
         mask-image: var(--svg);
         mask-repeat: no-repeat;
         mask-size: 100% 100%;
@@ -142,7 +142,7 @@
         &:hover {
           visibility: visible;
           opacity: 1;
-          background-color: var(--charm-highlight-color);
+          background-color: var(--fish-highlight-color);
         }
       }
 
@@ -150,7 +150,7 @@
         --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9.5 2A1.5 1.5 0 0 0 8 3.5v1A1.5 1.5 0 0 0 9.5 6h5A1.5 1.5 0 0 0 16 4.5v-1A1.5 1.5 0 0 0 14.5 2z'/%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M6.5 4.037c-1.258.07-2.052.27-2.621.84C3 5.756 3 7.17 3 9.998v6c0 2.829 0 4.243.879 5.122c.878.878 2.293.878 5.121.878h6c2.828 0 4.243 0 5.121-.878c.879-.88.879-2.293.879-5.122v-6c0-2.828 0-4.242-.879-5.121c-.569-.57-1.363-.77-2.621-.84V4.5a3 3 0 0 1-3 3h-5a3 3 0 0 1-3-3zm9.012 8.511a.75.75 0 1 0-1.024-1.096l-3.774 3.522l-1.202-1.122a.75.75 0 0 0-1.024 1.096l1.715 1.6a.75.75 0 0 0 1.023 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
         visibility: visible;
         opacity: 1;
-        background-color: var(--charm-highlight-color);
+        background-color: var(--fish-highlight-color);
       }
 
       .code-language {
@@ -165,15 +165,15 @@
       }
 
       &.has-title {
-        background-color: var(--charm-highlight-color);
-        color: var(--charm-background-color);
+        background-color: var(--fish-highlight-color);
+        color: var(--fish-background-color);
         border-radius: 1em 1em 0 0;
         margin-top: 1em;
         margin-bottom: -1em;
         padding: 0 1em;
 
         ::selection {
-          color: var(--charm-font-color) !important;
+          color: var(--fish-font-color) !important;
         }
 
         .code-language {
@@ -187,7 +187,7 @@
           right: 1em;
           visibility: visible;
           opacity: 0.6;
-          background-color: var(--charm-background-color) !important;
+          background-color: var(--fish-background-color) !important;
         }
       }
     }
@@ -258,7 +258,7 @@
   }
 
   pre > code *::selection {
-    background-color: var(--charm-contrast-color-5);
+    background-color: var(--fish-contrast-color-5);
     color: inherit;
   }
 
@@ -270,8 +270,8 @@
   p,
   li {
     code {
-      background-color: var(--charm-highlight-color);
-      color: var(--charm-background-color);
+      background-color: var(--fish-highlight-color);
+      color: var(--fish-background-color);
       opacity: 0.85;
       box-sizing: border-box;
       border-radius: 0.25em;
@@ -286,8 +286,8 @@
       font-style: italic;
 
       &::selection {
-        background-color: var(--charm-background-color);
-        color: var(--charm-highlight-color);
+        background-color: var(--fish-background-color);
+        color: var(--fish-highlight-color);
       }
     }
   }
@@ -296,17 +296,17 @@
     p,
     li {
       code {
-        color: var(--charm-font-color);
+        color: var(--fish-font-color);
 
         &::selection {
-          color: var(--charm-font-color);
+          color: var(--fish-font-color);
         }
       }
     }
   }
 
   hr {
-    border-color: var(--charm-contrast-color);
+    border-color: var(--fish-contrast-color);
   }
 
   ul {
@@ -332,9 +332,9 @@
     font-style: italic;
     line-height: 1.6;
 
-    background: var(--charm-card-background);
+    background: var(--fish-card-background);
 
-    border: var(--charm-contrast-color-5) 1px solid;
+    border: var(--fish-contrast-color-5) 1px solid;
     border-left: 0.5em solid #78c0a8;
     border-radius: 0.25rem;
 
@@ -383,7 +383,7 @@
 
   article {
     ::selection {
-      background-color: var(--charm-contrast-color-1);
+      background-color: var(--fish-contrast-color-1);
     }
   }
 

@@ -1,5 +1,5 @@
-import { collections as charmCollections } from "astro-charm/content";
+import { collections as fishCollections } from "astro-fish/content";
 export const collections = {
   // your other collections
-  ...charmCollections,
+  ...fishCollections,
 };

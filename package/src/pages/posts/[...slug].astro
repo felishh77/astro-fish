@@ -1,10 +1,10 @@
 ---
-import config from "charm:config";
+import config from "fish:config";
 import { getPostStaticPaths as getStaticPaths } from "../../utils/collectionUtils.ts";
 import { flat2NestedHeadings } from "../../utils/headingsUtils.ts";
 export { getStaticPaths };
 
-import { PostLayout } from "charm:layouts";
+import { PostLayout } from "fish:layouts";
 
 const { entry } = Astro.props;
 const { Content, headings } = await entry.render();

@@ -17,10 +17,8 @@ Hi, welcome👋
 
 I am ...
 
-
 ## Contact
 
 email: ...
 
-
-> I used [astro-charm](https://github.com/Yuhanawa/astro-charm) for this website
+> I used [astro-fish](https://github.com/felishh77/astro-fish) for this website

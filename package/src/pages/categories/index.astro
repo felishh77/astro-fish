@@ -1,5 +1,5 @@
 ---
-import { HomeLayout } from "charm:layouts";
+import { HomeLayout } from "fish:layouts";
 import { getPostEntries } from "../../utils/collectionUtils";
 
 const entries = await getPostEntries();
@@ -73,7 +73,7 @@ const currentPage = p ? parseInt(p) : 0;
 
 <style>
   .nav {
-    background: var(--charm-card-background);
+    background: var(--fish-card-background);
     padding: 1rem;
     margin-bottom: 2rem;
     border-radius: 0.5rem;
@@ -93,7 +93,7 @@ const currentPage = p ? parseInt(p) : 0;
     padding: 0.75rem;
     margin-bottom: 0.5rem;
     border-radius: 0.25rem;
-    background: var(--charm-card-background);
+    background: var(--fish-card-background);
     transition: background-color 0.2s;
     cursor: pointer;
     display: flex;
@@ -101,7 +101,7 @@ const currentPage = p ? parseInt(p) : 0;
     gap: 0.5rem;
 
     &:hover {
-      background: var(--charm-contrast-color-3);
+      background: var(--fish-contrast-color-3);
     }
   }
 
@@ -112,7 +112,7 @@ const currentPage = p ? parseInt(p) : 0;
 
   .view-more {
     display: inline-block;
-    color: var(--charm-highlight-color);
+    color: var(--fish-highlight-color);
     text-decoration: none;
   }
 </style>

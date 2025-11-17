@@ -1,7 +1,7 @@
-html.charm body {
+html.fish body {
   /* your custom css */
 }
 
-html.charm.dark body {
+html.fish.dark body {
   /* your custom css for dark mode */
 }

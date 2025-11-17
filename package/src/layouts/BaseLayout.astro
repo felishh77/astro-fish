@@ -1,12 +1,12 @@
 ---
-import "charm:styles";
-import "charm:userCustomStyle";
+import "fish:styles";
+import "fish:userCustomStyle";
 import { SEO } from "astro-seo";
 import { ThemeScript } from "astro-theme-toggle";
 import { ClientRouter } from "astro:transitions";
-import { FontLoader, GoogleAnalytics } from "charm:components";
-import { CustomScriptComponent } from "charm:custom";
-import config from "charm:config";
+import { FontLoader, GoogleAnalytics } from "fish:components";
+import { CustomScriptComponent } from "fish:custom";
+import config from "fish:config";
 import { calculateStringSimilarity } from "../utils/stringUtils";
 import { getImageSrc } from "../utils/imageUtils";
 
@@ -55,7 +55,7 @@ const canonicalURL = Astro.site
   : Astro.url;
 ---
 
-<html lang={config.lang} class="charm">
+<html lang={config.lang} class="fish">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -108,7 +108,7 @@ const canonicalURL = Astro.site
         link: "color: #e06458; text-decoration: underline;",
       };
       console.info(
-        `%c Charm Theme  %cv${version} %c\n%c→%cGithub: %chttps://github.com/Yuhanawa/astro-charm`,
+        `%c Fish Theme  %cv${version} %c\n%c→%cGithub: %chttps://github.com/felishh77/astro-fish`,
         `${style.block} ${style.badge} font-weight: bold;`,
         `${style.block} ${style.bg} ${style.text} opacity: 0.8;`,
         style.bg,

@@ -1,6 +1,6 @@
 ---
-import { HomeSide } from "charm:components";
-import { MainLayout } from "charm:layouts";
+import { HomeSide } from "fish:components";
+import { MainLayout } from "fish:layouts";
 import { Icon } from "./../integrations/astro-icon/components";
 
 const { useH1, ...props } = Astro.props;
@@ -28,7 +28,7 @@ const { useH1, ...props } = Astro.props;
     border-radius: 0.25rem;
     padding: 0 0.3rem;
 
-    color: var(--charm-font-color);
+    color: var(--fish-font-color);
     opacity: 0.5;
     transition:
       opacity 0.3s ease,
@@ -37,8 +37,8 @@ const { useH1, ...props } = Astro.props;
 
     &:hover {
       opacity: 1;
-      background-color: var(--charm-contrast-color-2);
-      color: var(--charm-highlight-color);
+      background-color: var(--fish-contrast-color-2);
+      color: var(--fish-highlight-color);
     }
   }
 

@@ -86,9 +86,9 @@ title ??= "Table of Contents";
 
         border-image-source: linear-gradient(
           150deg,
-          var(--charm-highlight-color),
-          var(--charm-highlight-color-1),
-          var(--charm-highlight-color-1)
+          var(--fish-highlight-color),
+          var(--fish-highlight-color-1),
+          var(--fish-highlight-color-1)
         );
       }
 
@@ -97,15 +97,15 @@ title ??= "Table of Contents";
 
         border-image-source: linear-gradient(
           150deg,
-          var(--charm-highlight-color),
-          var(--charm-highlight-color-2),
-          var(--charm-highlight-color-1)
+          var(--fish-highlight-color),
+          var(--fish-highlight-color-2),
+          var(--fish-highlight-color-1)
         );
         border-image-slice: 1;
         background-image: linear-gradient(
           to right,
-          var(--charm-highlight-color-1) 0%,
-          var(--charm-background-color),
+          var(--fish-highlight-color-1) 0%,
+          var(--fish-background-color),
           transparent 50%,
           /* --- 50% --- */ transparent 50%,
           transparent,
@@ -118,8 +118,8 @@ title ??= "Table of Contents";
       &:not(.toc-heading-in-view, &:has(.toc-heading:hover)) > a:hover {
         background-image: linear-gradient(
           to left,
-          var(--charm-highlight-color-1) 0%,
-          var(--charm-highlight-color-1),
+          var(--fish-highlight-color-1) 0%,
+          var(--fish-highlight-color-1),
           transparent 50%,
           /* --- 50% --- */ transparent 50%,
           transparent,
@@ -130,9 +130,9 @@ title ??= "Table of Contents";
       &.toc-heading-in-view > a:hover {
         background-image: linear-gradient(
           to right,
-          var(--charm-highlight-color-1),
+          var(--fish-highlight-color-1),
           transparent,
-          var(--charm-highlight-color-1)
+          var(--fish-highlight-color-1)
         );
       }
     }

@@ -1,6 +1,6 @@
-import charm from "astro-charm";
+import fish from "astro-fish";
 
-export default charm({
+export default fish({
   config: {
     lang: "en",
     title: "Title",
@@ -22,7 +22,7 @@ export default charm({
         },
         {
           title: "GitHub",
-          link: "https://github.com/yuhanawa/astro-charm",
+          link: "https://github.com/yuhanawa/astro-fish",
           icon: "simple-icons:github",
         },
       ],
@@ -34,7 +34,7 @@ export default charm({
       // your can override components here
     },
     custom: {
-      // see https://astro-charm.vercel.app/posts/custom#add-custom-components
+      // see https://astro-fish.vercel.app/posts/custom#add-custom-components
     },
   },
 });

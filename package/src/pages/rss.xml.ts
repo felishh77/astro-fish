@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import rss from "@astrojs/rss";
-import config from "charm:config";
+import config from "fish:config";
 import { getPostEntries } from "../utils/collectionUtils";
 
 export const GET: APIRoute = async function GET(context) {

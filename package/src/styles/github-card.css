@@ -2,8 +2,8 @@
   .content-wrapper {
     a.card-github {
       display: block;
-      background: var(--charm-github-card-background);
-      color: var(--charm-font-color);
+      background: var(--fish-github-card-background);
+      color: var(--fish-font-color);
       position: relative;
       margin: 0.5rem 0;
       padding: 1.1rem 1.5rem;
@@ -12,7 +12,7 @@
       text-decoration-line: none;
 
       &:hover {
-        background-color: var(--charm-highlight-color-1);
+        background-color: var(--fish-highlight-color-1);
       }
 
       &:active {
@@ -37,7 +37,7 @@
           font-weight: bold;
 
           &:hover {
-            color: var(--charm-highlight-color);
+            color: var(--fish-highlight-color);
           }
         }
 
@@ -56,7 +56,7 @@
           width: 1.5rem;
           height: 1.5rem;
           margin-top: -0.1rem;
-          background-color: var(--charm-highlight-color);
+          background-color: var(--fish-highlight-color);
           background-size: cover;
           border-radius: 50%;
         }
@@ -97,7 +97,7 @@
         width: 1.2em;
         margin-right: 0.4rem;
         vertical-align: -0.24em;
-        background-color: var(--charm-font-color);
+        background-color: var(--fish-font-color);
 
         overflow: visible;
         mask-size: contain;
@@ -137,7 +137,7 @@
         .gc-description,
         .gc-infobar,
         .gc-avatar {
-          background-color: var(--charm-font-color);
+          background-color: var(--fish-font-color);
           color: transparent;
           opacity: 0.5;
           animation: pulsate 2s infinite linear;
