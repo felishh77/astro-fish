@@ -12,7 +12,7 @@ export default fish({
     },
     licenseId: "CC0-1.0",
     giscus: {
-      repo: "Yuhanawa/astro-fish",
+      repo: "felishh77/astro-fish",
       repoId: "R_kgDOMk98JQ",
       category: "Blog Post Comments",
       categoryId: "DIC_kwDOMk98Jc4CljB_",

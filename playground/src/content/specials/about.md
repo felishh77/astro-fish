@@ -16,7 +16,7 @@ index: 10
 Beautiful, simple and easy-to-use blog theme
 
 :::tip
-This page is [the README.md of the Github repository](https://github.com/Yuhanawa/astro-fish), but it may not be updated in time.
+This page is [the README.md of the Github repository](https://github.com/felishh77/astro-fish), but it may not be updated in time.
 :::
 
 ![Preview of Live Demo](./../../../../docs/Fish-Theme-Preview-20250211.png "Fish-Theme-Preview-20250211")
@@ -163,7 +163,7 @@ export default defineConfig({
 });
 ```
 
-### [Config schema](https://github.com/Yuhanawa/astro-fish/blob/main/package/index.ts#L59-L152)
+### [Config schema](https://github.com/felishh77/astro-fish/blob/main/package/index.ts#L59-L152)
 
 ```ts
 const configSchema = z.object({

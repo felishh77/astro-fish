@@ -29,12 +29,12 @@ Only the first matching heading will generate the table of contents.
 
 You can add dynamic cards that link to GitHub repositories, on page load, the repository information is pulled from the GitHub API.
 
-::github{repo="Yuhanawa/astro-fish"}
+::github{repo="felishh77/astro-fish"}
 
 Create a GitHub repository card with the code `::github{repo="<owner>/<repo>"}`.
 
 ```markdown
-::github{repo="Yuhanawa/astro-fish"}
+::github{repo="felishh77/astro-fish"}
 ```
 
 ## Admonitions

@@ -30,12 +30,12 @@ Markdown ファイルに `Table of contents`、`toc`、または `contents` の�
 
 GitHub リポジトリへのリンクを含む動的なカードを追加できます。ページ読み込み時に、リポジトリ情報は GitHub API から取得されます。
 
-::github{repo="Yuhanawa/astro-fish"}
+::github{repo="felishh77/astro-fish"}
 
 `::github{repo="<owner>/<repo>"}` を使用して GitHub リポジトリカードを作成します。
 
 ```markdown
-::github{repo="Yuhanawa/astro-fish"}
+::github{repo="felishh77/astro-fish"}
 ```
 
 ## 警告 (Admonitions)

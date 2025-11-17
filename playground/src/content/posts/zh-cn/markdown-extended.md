@@ -30,12 +30,12 @@ hidden: true
 
 你可以添加 GitHub 仓库卡片，仓库信息会在页面加载时从 GitHub API 中获取。
 
-::github{repo="Yuhanawa/astro-fish"}
+::github{repo="felishh77/astro-fish"}
 
 使用 `::github{repo="<owner>/<repo>"}` 创建一个 GitHub 仓库卡片。
 
 ```markdown
-::github{repo="Yuhanawa/astro-fish"}
+::github{repo="felishh77/astro-fish"}
 ```
 
 ## 警示 (Admonitions)
