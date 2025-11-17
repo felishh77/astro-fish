@@ -11,27 +11,27 @@ updated: 2024-12-28
 index: 10
 ---
 
-# Astro Theme: Charm Readme
+# Astro Theme: Fish Readme
 
 Beautiful, simple and easy-to-use blog theme
 
 :::tip
-This page is [the README.md of the Github repository](https://github.com/Yuhanawa/astro-charm), but it may not be updated in time.
+This page is [the README.md of the Github repository](https://github.com/Yuhanawa/astro-fish), but it may not be updated in time.
 :::
 
-![Preview of Live Demo](./../../../../docs/Charm-Theme-Preview-20250211.png "Charm-Theme-Preview-20250211")
+![Preview of Live Demo](./../../../../docs/Fish-Theme-Preview-20250211.png "Fish-Theme-Preview-20250211")
 
-[Github](https://github.com/yuhanawa/astro-charm) | [Live Demo](https://astro-charm.vercel.app/) | [PageSpeed](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fastro-charm.vercel.app%2F)
+[Github](https://github.com/yuhanawa/astro-fish) | [Live Demo](https://astro-fish.vercel.app/) | [PageSpeed](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fastro-fish.vercel.app%2F)
 
-Note: The image on the right in the `Live Demo` is not part of the Charm theme
+Note: The image on the right in the `Live Demo` is not part of the Fish theme
 
 ## Features
 
 - Built with Astro v5
 - Desktop and Mobile support
 - High PageSpeed score
-  - 100! [Report from Dec 29, 2024](https://pagespeed.web.dev/analysis/https-astro-charm-vercel-app/g1cxq98foh)
-  - view new [PageSpeed](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fastro-charm.vercel.app%2F)
+  - 100! [Report from Dec 29, 2024](https://pagespeed.web.dev/analysis/https-astro-fish-vercel-app/g1cxq98foh)
+  - view new [PageSpeed](https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fastro-fish.vercel.app%2F)
 - Category and Tag page
 - Dark mode
 - Code Block
@@ -41,14 +41,14 @@ Note: The image on the right in the `Live Demo` is not part of the Charm theme
 - Sitemap
 - RSS
 - Custom
-  - [How to customize the theme](https://astro-charm.vercel.app/posts/custom)
+  - [How to customize the theme](https://astro-fish.vercel.app/posts/custom)
 
 ## How to use
 
-1. Run the following command to create a new project with `astro-charm` theme.
+1. Run the following command to create a new project with `astro-fish` theme.
 
 ```bash
-pnpm create astro-theme@latest use astro-charm
+pnpm create astro-theme@latest use astro-fish
 ```
 
 2. Into your project and Install `@iconify-json/simple-icons` and `@iconify-json/solar`.
@@ -61,26 +61,26 @@ pnpm add @iconify-json/solar
 3. Add `src/content.config.ts` to your project.
 
 ```ts
-import { collections as charmCollections } from "astro-charm/content";
+import { collections as fishCollections } from "astro-fish/content";
 export const collections = {
   // your other collections
-  ...charmCollections,
+  ...fishCollections,
 };
 ```
 
 4. Modify config and enjoy it!
 
-Note: you need to add `site` to `astro.config.ts` file, because `charm` use it for `sitemap` and `rss`.
+Note: you need to add `site` to `astro.config.ts` file, because `fish` use it for `sitemap` and `rss`.
 
 To learn more, see: [Config](#config)
 
 <details>
   <summary>Install to existing project</summary>
 
-1. Install `astro-charm`, `@iconify-json/simple-icons` and `@iconify-json/solar` to your project.
+1. Install `astro-fish`, `@iconify-json/simple-icons` and `@iconify-json/solar` to your project.
 
 ```bash
-pnpm astro add astro-charm
+pnpm astro add astro-fish
 pnpm add @iconify-json/simple-icons
 pnpm add @iconify-json/solar
 ```
@@ -88,31 +88,31 @@ pnpm add @iconify-json/solar
 2. Modify `src/content.config.ts` file.
 
 ```ts
-import { collections as charmCollections } from "astro-charm/content";
+import { collections as fishCollections } from "astro-fish/content";
 export const collections = {
   // your other collections
-  ...charmCollections,
+  ...fishCollections,
 };
 ```
 
 3. Modify `astro.config.ts` file, you can use following command to modify it.
 
 ```bash
-pnpm create astro-theme@latest use astro-charm
+pnpm create astro-theme@latest use astro-fish
 ```
 
 Or you can modify it manually.
 
 ```ts
 import { defineConfig } from "astro/config";
-import charm from "astro-charm";
+import fish from "astro-fish";
 
 export default defineConfig({
   prefetch: true,
   site: "<your-site-url>",
 
   integrations: [
-    charm({
+    fish({
       config: {
         lang: "en", // for HTML's lang attribute and RSS
         title: "Title on home page", // for seo on home page
@@ -134,20 +134,20 @@ export default defineConfig({
 
 ## Config
 
-You need to add `site` to `astro.config.ts` file, because `charm` use it for `sitemap` and `rss`.
+You need to add `site` to `astro.config.ts` file, because `fish` use it for `sitemap` and `rss`.
 
 ### Minimal config
 
 ```ts
 import { defineConfig } from "astro/config";
-import charm from "astro-charm";
+import fish from "astro-fish";
 
 export default defineConfig({
   prefetch: true,
   site: "<your-site-url>",
 
   integrations: [
-    charm({
+    fish({
       config: {
         lang: "en", // for HTML's lang attribute and RSS
         title: "Title on home page", // for seo on home page
@@ -163,7 +163,7 @@ export default defineConfig({
 });
 ```
 
-### [Config schema](https://github.com/Yuhanawa/astro-charm/blob/main/package/index.ts#L59-L152)
+### [Config schema](https://github.com/Yuhanawa/astro-fish/blob/main/package/index.ts#L59-L152)
 
 ```ts
 const configSchema = z.object({
@@ -212,7 +212,7 @@ const configSchema = z.object({
         },
         {
           title: "GitHub",
-          link: "https://github.com/yuhanawa/astro-charm",
+          link: "https://github.com/yuhanawa/astro-fish",
           icon: "simple-icons:github",
         },
       ]),

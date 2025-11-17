@@ -1,18 +1,18 @@
-import charm from "astro-charm";
+import fish from "astro-fish";
 
-export default charm({
+export default fish({
   config: {
     lang: "en",
-    title: "Charm Theme",
+    title: "Fish Theme",
     description: "A beautiful blog theme for Astro",
     side: {
-      title: "Charm Theme",
+      title: "Fish Theme",
       sub: "A blog theme for Astro",
       bio: "Cupidatat ex id eiusmod aute do labore ea minim eu fugiat Lorem fugiat adipisicing.",
     },
     licenseId: "CC0-1.0",
     giscus: {
-      repo: "Yuhanawa/astro-charm",
+      repo: "Yuhanawa/astro-fish",
       repoId: "R_kgDOMk98JQ",
       category: "Blog Post Comments",
       categoryId: "DIC_kwDOMk98Jc4CljB_",

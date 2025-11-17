@@ -1,5 +1,5 @@
 @media (width >= 52rem) {
-  html.charm body {
+  html.fish body {
     position: relative;
     z-index: 0;
 
@@ -20,7 +20,7 @@
     }
   }
 
-  html.charm.dark body {
+  html.fish.dark body {
     &::before {
       filter: brightness(0.8);
     }

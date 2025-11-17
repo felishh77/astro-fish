@@ -13,9 +13,9 @@ index: 1
 
 # Projects
 
-## astro-charm
+## astro-fish
 
-::github{repo="Yuhanawa/astro-charm"}
+::github{repo="Yuhanawa/astro-fish"}
 
 The theme of this blog.
 
@@ -30,7 +30,7 @@ How to add this page (or other special pages):
 1. add `special.md` to the `src/content/specials` directory
 2. add `title` and `icon` fields in frontmatter at least
 
-for more information, see [special.md](https://github.com/Yuhanawa/astro-charm/blob/main/playground/src/content/specials/special.md)
+for more information, see [special.md](https://github.com/Yuhanawa/astro-fish/blob/main/playground/src/content/specials/special.md)
 
 here is the frontmatter of this page:
 

@@ -11,15 +11,15 @@ hidden: true
 
 ## CSS
 
-`src/styles/custom-charm.css` ファイルを追加するだけでカスタマイズ可能です
+`src/styles/custom-fish.css` ファイルを追加するだけでカスタマイズ可能です
 
-ライブデモで右側に表示されている画像は、`src/styles/custom-charm.css` を使用して追加されています
+ライブデモで右側に表示されている画像は、`src/styles/custom-fish.css` を使用して追加されています
 
-以下はライブデモで使用されている `src/styles/custom-charm.css` の例です：
+以下はライブデモで使用されている `src/styles/custom-fish.css` の例です：
 
 ```css
 @media (width >= 52rem) {
-  html.charm body {
+  html.fish body {
     position: relative;
     z-index: 0;
 
@@ -40,7 +40,7 @@ hidden: true
     }
   }
 
-  html.charm.dark body {
+  html.fish.dark body {
     &::before {
       filter: brightness(0.8);
     }
@@ -57,11 +57,11 @@ hidden: true
 
 ```ts
 import { defineConfig } from "astro/config";
-import charm from "astro-charm";
+import fish from "astro-fish";
 
 export default defineConfig({
   integrations: [
-    charm({
+    fish({
       config: {
         // ...
       },
@@ -100,11 +100,11 @@ export default defineConfig({
 
 ```ts
 import { defineConfig } from "astro/config";
-import charm from "astro-charm";
+import fish from "astro-fish";
 
 export default defineConfig({
   integrations: [
-    charm({
+    fish({
       config: {
         // ...
       },

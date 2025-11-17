@@ -10,14 +10,14 @@ image: "../../assets/customize_theme.svg"
 
 ## CSS
 
-Just add `src/styles/custom-charm.css`
+Just add `src/styles/custom-fish.css`
 
-In this live demo, the image on the right was added by `src/styles/custom-charm.css`
+In this live demo, the image on the right was added by `src/styles/custom-fish.css`
 
-Here is the `src/styles/custom-charm.css` for the live demo:
+Here is the `src/styles/custom-fish.css` for the live demo:
 ```css
 @media (width >= 52rem) {
-  html.charm body {
+  html.fish body {
     position: relative;
     z-index: 0;
 
@@ -38,7 +38,7 @@ Here is the `src/styles/custom-charm.css` for the live demo:
     }
   }
 
-  html.charm.dark body {
+  html.fish.dark body {
     &::before {
       filter: brightness(0.8);
     }
@@ -55,11 +55,11 @@ These components are empty by default, so you can safely override them.
 
 ```ts
 import { defineConfig } from "astro/config";
-import charm from "astro-charm";
+import fish from "astro-fish";
 
 export default defineConfig({
   integrations: [
-    charm({
+    fish({
       config: {
         // ...
       },
@@ -98,11 +98,11 @@ If you do not specify `licenseId` in `config`, the License area will not be disp
 
 ```ts
 import { defineConfig } from "astro/config";
-import charm from "astro-charm";
+import fish from "astro-fish";
 
 export default defineConfig({
   integrations: [
-    charm({
+    fish({
       config: {
         // ...
       },

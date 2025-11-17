@@ -3,11 +3,13 @@
   "include": [
     "package/.astro/types.d.ts",
     "playground/.astro/types.d.ts",
-    "playground/.astro/charm.d.ts",
+    "playground/.astro/fish.d.ts",
     "package/**/*",
     "playground/**/*"
   ],
-  "exclude": ["playground/dist"],
+  "exclude": [
+    "playground/dist"
+  ],
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true

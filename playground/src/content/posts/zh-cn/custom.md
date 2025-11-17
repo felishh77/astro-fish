@@ -11,15 +11,15 @@ hidden: true
 
 ## CSS
 
-只需添加 `src/styles/custom-charm.css` 文件即可
+只需添加 `src/styles/custom-fish.css` 文件即可
 
-在 live demo 中，右侧图片正是通过 `src/styles/custom-charm.css` 添加的
+在 live demo 中，右侧图片正是通过 `src/styles/custom-fish.css` 添加的
 
-以下是 live demo 中使用的 `src/styles/custom-charm.css`：
+以下是 live demo 中使用的 `src/styles/custom-fish.css`：
 
 ```css
 @media (width >= 52rem) {
-  html.charm body {
+  html.fish body {
     position: relative;
     z-index: 0;
 
@@ -40,7 +40,7 @@ hidden: true
     }
   }
 
-  html.charm.dark body {
+  html.fish.dark body {
     &::before {
       filter: brightness(0.8);
     }
@@ -57,11 +57,11 @@ hidden: true
 
 ```ts
 import { defineConfig } from "astro/config";
-import charm from "astro-charm";
+import fish from "astro-fish";
 
 export default defineConfig({
   integrations: [
-    charm({
+    fish({
       config: {
         // ...
       },
@@ -100,11 +100,11 @@ export default defineConfig({
 
 ```ts
 import { defineConfig } from "astro/config";
-import charm from "astro-charm";
+import fish from "astro-fish";
 
 export default defineConfig({
   integrations: [
-    charm({
+    fish({
       config: {
         // ...
       },
