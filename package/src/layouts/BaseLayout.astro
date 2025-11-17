@@ -1,0 +1,154 @@
+---
+import "charm:styles";
+import "charm:userCustomStyle";
+import { SEO } from "astro-seo";
+import { ThemeScript } from "astro-theme-toggle";
+import { ClientRouter } from "astro:transitions";
+import { FontLoader, GoogleAnalytics } from "charm:components";
+import { CustomScriptComponent } from "charm:custom";
+import config from "charm:config";
+import { calculateStringSimilarity } from "../utils/stringUtils";
+import { getImageSrc } from "../utils/imageUtils";
+
+type Props = {
+  meta?: {
+    title?: string;
+    description?: string;
+    image?: any;
+  };
+};
+
+const { meta } = Astro.props;
+
+let title = meta?.title || config.title;
+const titleSuffix = config.titleSuffix
+  ? config.titleSuffix === true
+    ? ` | ${config.title.trim()}`
+    : config.titleSuffix
+  : "";
+if (
+  title.length + titleSuffix.length < 60 &&
+  calculateStringSimilarity(title, titleSuffix) < 0.8
+)
+  title += titleSuffix;
+
+const description = meta?.description || config.description;
+
+let site = null;
+if (Astro.site) {
+  site = Astro.site.toString();
+  if (site.endsWith("/")) site = site.slice(0, -1);
+}
+
+let imgSrc = getImageSrc(meta?.image);
+if (imgSrc && imgSrc.startsWith("/") && site) imgSrc = site + imgSrc;
+
+if ((!imgSrc || !imgSrc.startsWith("http")) && config.placeholderImage) {
+  if (config.placeholderImage.startsWith("/") && site)
+    imgSrc = site + config.placeholderImage;
+  else if (config.placeholderImage.startsWith("http"))
+    imgSrc = config.placeholderImage;
+}
+
+const canonicalURL = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : Astro.url;
+---
+
+<html lang={config.lang} class="charm">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <FontLoader />
+    <ClientRouter />
+    <ThemeScript />
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalURL}
+      openGraph={imgSrc
+        ? {
+            basic: {
+              title: title,
+              type: "blog",
+              image: imgSrc,
+            },
+          }
+        : undefined}
+      twitter={imgSrc
+        ? {
+            title: title,
+            creator: config.author,
+            card:
+              imgSrc && imgSrc.length > 0 ? "summary_large_image" : "summary",
+            image: imgSrc,
+          }
+        : undefined}
+    />
+    {
+      config.rss && (
+        <link
+          rel="alternate"
+          title={title}
+          href="/rss.xml"
+          type="application/rss+xml"
+        />
+      )
+    }
+    <script>
+      import { version } from "../../package.json";
+      const style = {
+        bg: "background: #fcfaf2;",
+        block: "display: inline-block; padding: 2px 6px;",
+        badge: "color: #fcfaf2; background: #e06458;",
+        text: "color: #374151;",
+        arrow: "color: #212121;",
+        link: "color: #e06458; text-decoration: underline;",
+      };
+      console.info(
+        `%c Charm Theme  %cv${version} %c\n%c→%cGithub: %chttps://github.com/Yuhanawa/astro-charm`,
+        `${style.block} ${style.badge} font-weight: bold;`,
+        `${style.block} ${style.bg} ${style.text} opacity: 0.8;`,
+        style.bg,
+        `${style.block} ${style.bg} ${style.arrow}`,
+        `${style.block} ${style.bg} ${style.text}`,
+        `${style.block} ${style.bg} ${style.link}`,
+      );
+    </script>
+    {
+      config.googleAnalyticsId && (
+        <GoogleAnalytics id={config.googleAnalyticsId} />
+      )
+    }
+    <CustomScriptComponent />
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+<style>
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    margin: 0 clamp(2rem, 8vw, 12rem);
+    gap: clamp(2rem, 4vw, 6rem);
+  }
+
+  @media (width <= 42rem) {
+    main {
+      display: block;
+    }
+  }
+
+  @media (42rem <= width <= 52rem) {
+    main {
+      margin-left: clamp(1.5rem, calc(8vw - 2rem), 10rem);
+    }
+  }
+</style>

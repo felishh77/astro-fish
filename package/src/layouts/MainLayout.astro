@@ -1,0 +1,11 @@
+---
+import { ContentWrapper } from "charm:components";
+import { BaseLayout } from "charm:layouts";
+---
+
+<BaseLayout {...Astro.props}>
+  <slot name="side" />
+  <ContentWrapper>
+    <slot />
+  </ContentWrapper>
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import config from "charm:config";
+import { getPostStaticPaths as getStaticPaths } from "../../utils/collectionUtils.ts";
+import { flat2NestedHeadings } from "../../utils/headingsUtils.ts";
+export { getStaticPaths };
+
+import { PostLayout } from "charm:layouts";
+
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+const anchor = config.markdown?.headingAnchor ?? "#";
+const nestedHeadings = flat2NestedHeadings(
+  headings.map((h) => {
+    if (h.text.endsWith(anchor)) h.text = h.text.slice(0, -anchor.length);
+    return h;
+  }),
+);
+---
+
+<PostLayout
+  meta={{
+    title: entry.data.title,
+    description: entry.data.description,
+    image: entry.data.image,
+  }}
+  postEntry={entry}
+  headings={nestedHeadings}
+>
+  <Content />
+</PostLayout>

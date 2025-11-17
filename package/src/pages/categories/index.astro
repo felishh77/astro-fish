@@ -1,0 +1,118 @@
+---
+import { HomeLayout } from "charm:layouts";
+import { getPostEntries } from "../../utils/collectionUtils";
+
+const entries = await getPostEntries();
+const categories = [
+  ...new Set(entries.map((entry) => entry.data.category).filter(Boolean)),
+].map((category) => ({
+  category: category!,
+  posts: entries
+    .filter((entry) => entry.data.category === category)
+    .map((entry) => ({
+      title: entry.data.title,
+      slug: entry.slug,
+    })),
+}));
+
+const totalPages = Math.ceil(categories.length / 20);
+const p = Astro.url.searchParams.get("p");
+const currentPage = p ? parseInt(p) : 0;
+---
+
+<HomeLayout>
+  <h1>Blog Categories</h1>
+
+  <div>
+    {
+      categories
+        .slice(currentPage * 20, (currentPage + 1) * 20)
+        .map((category) => (
+          <section
+            class="category-container"
+            aria-labelledby={`category-${category.category.toLowerCase()}`}
+          >
+            <h2
+              id={`category-${category.category.toLowerCase()}`}
+              class="category-title"
+            >
+              {category.category}
+            </h2>
+            <ul class="post-list">
+              {category.posts.slice(0, 3).map((post) => (
+                <li>
+                  <a href={`/posts/${post.slug}`} class="post-item">
+                    {post.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            {category.posts.length > 3 && (
+              <a href={`/categories/${category.category}`} class="view-more">
+                View More
+              </a>
+            )}
+          </section>
+        ))
+    }
+    <div class="pager">
+      {
+        totalPages > currentPage && (
+          <a
+            href={`/?p=${currentPage + 1}`}
+            class={`pager-item ${currentPage === 0 ? "disabled" : ""}`}
+          >
+            {" "}
+            &#60;{" "}
+          </a>
+        )
+      }
+    </div>
+  </div>
+</HomeLayout>
+
+<style>
+  .nav {
+    background: var(--charm-card-background);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+  }
+
+  .category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .post-item {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    background: var(--charm-card-background);
+    transition: background-color 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:hover {
+      background: var(--charm-contrast-color-3);
+    }
+  }
+
+  .category-container {
+    position: relative;
+    padding-left: 60px;
+  }
+
+  .view-more {
+    display: inline-block;
+    color: var(--charm-highlight-color);
+    text-decoration: none;
+  }
+</style>

@@ -1,0 +1,325 @@
+---
+import { Icon } from "./../integrations/astro-icon/components";
+import { MobileMenu, ShootingStar } from "charm:components";
+import config from "charm:config";
+import { getSpecialEntries } from "./../utils/collectionUtils";
+import { IconWrapper } from "charm:components";
+import IconLightDarkWrapper from "./IconLightDarkWrapper.astro";
+
+const specialsEntries = await getSpecialEntries();
+---
+
+<MobileMenu />
+
+<div class="side">
+  <div class="container">
+    {config.shootingStar && <ShootingStar class="shooting-star" />}
+
+    <div class="center">
+      <nav>
+        <a
+          href={config.side.navHome!.link}
+          title={config.side.navHome!.title}
+          data-astro-prefetch="viewport"
+        >
+          <div class="item">
+            <span
+              class="title"
+              class:list={[
+                { hidden: config.side.navStyle === "only-icon" },
+                { transparent: config.side.navStyle === "default" },
+              ]}
+            >
+              {config.side.navHome!.title}
+            </span>
+            <IconWrapper
+              name={config.side.navHome!.icon!}
+              active={Astro.url.pathname === config.side.navHome!.link ||
+                Astro.url.pathname + "/" === config.side.navHome!.link}
+              class="icon"
+              class:list={[
+                {
+                  hidden: config.side.navStyle === "only-title",
+                  "hide-cursor-hover":
+                    config.side.navMenuIconHoverCursor === "none",
+                },
+              ]}
+            />
+          </div>
+        </a>
+        {
+          specialsEntries.map((i) => (
+            <a
+              href={`/${i.slug}`}
+              title={i.data.title}
+              data-astro-prefetch="viewport"
+            >
+              <div class="item">
+                <span
+                  class="title"
+                  class:list={[
+                    { hidden: config.side.navStyle === "only-icon" },
+                    { transparent: config.side.navStyle === "default" },
+                  ]}
+                >
+                  {i.data.title}
+                </span>
+                <IconWrapper
+                  name={i.data.icon}
+                  active={Astro.url.pathname === `/${i.slug}`}
+                  class="icon"
+                  class:list={[
+                    {
+                      hidden: config.side.navStyle === "only-title",
+                      "hide-cursor-hover":
+                        config.side.navMenuIconHoverCursor === "none",
+                    },
+                  ]}
+                />
+              </div>
+            </a>
+          ))
+        }
+      </nav>
+      <div class="content"><slot /></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a id="theme-toggle" href="javascript:void(0)" role="button">
+      <div
+        class="item"
+        class:list={[{ "width-2": config.side.footerStyle !== "only-title" }]}
+      >
+        <span
+          class="title"
+          class:list={[
+            {
+              hidden: config.side.footerStyle === "only-icon",
+              transparent: config.side.footerStyle === "default",
+            },
+          ]}
+        >
+          <span class="light">light</span>
+          <span class="dark">dark</span>
+        </span>
+        <IconLightDarkWrapper
+          name={{
+            light: "solar:cloud-sun-2-bold-duotone",
+            dark: "solar:moon-bold-duotone",
+            // dark: "solar:cloudy-moon-bold-duotone",
+          }}
+          class="icon"
+          class:list={[{ hidden: config.side.footerStyle === "only-title" }]}
+        />
+      </div>
+    </a>
+    {
+      config.side.footer!.map((i) => (
+        <a href={i.link}>
+          <div
+            class="item"
+            class:list={[
+              { "width-2": config.side.footerStyle !== "only-title" },
+            ]}
+          >
+            <span
+              class="title"
+              class:list={[
+                {
+                  hidden: config.side.footerStyle === "only-icon",
+                  transparent: config.side.footerStyle === "default",
+                },
+              ]}
+            >
+              {i.title}
+            </span>
+            <Icon
+              name={i.icon}
+              class="icon"
+              class:list={[
+                { hidden: config.side.footerStyle === "only-title" },
+              ]}
+            />
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  import { handleToggleClick } from "astro-theme-toggle";
+  const addListener = () => {
+    document
+      .getElementById("theme-toggle")
+      ?.addEventListener("click", handleToggleClick);
+  };
+  addListener();
+  document.addEventListener("astro:after-swap", addListener);
+</script>
+
+<style>
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .hide-cursor-hover {
+    cursor: none;
+  }
+
+  .width-2 {
+    width: 2rem;
+  }
+
+  .side {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: clamp(16em, 20em, 24em);
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    align-items: flex-end;
+    height: 60%;
+  }
+
+  .center {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 1.5rem;
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .title {
+      transform: translateX(-10px);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    a:hover {
+      .icon {
+        transform: translateX(0.25em);
+      }
+
+      .title {
+        opacity: 1;
+        transform: translateX(0.1em);
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 4rem 0;
+
+    #theme-toggle {
+      scale: 1.1;
+      margin-right: 2rem;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .title {
+      transform: translateX(calc(-50% + 0.75rem));
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      width: fit-content;
+    }
+
+    a:hover {
+      .title {
+        opacity: 1;
+        transform: translateX(calc(-50% + 0.75rem)) translateY(-0.25em);
+      }
+
+      .icon {
+        transform: translateY(-0.25em);
+      }
+    }
+  }
+
+  @media (width <= 64rem) {
+    .side {
+      width: auto;
+    }
+
+    .content,
+    .footer {
+      display: none;
+    }
+  }
+
+  @media (width <= 52rem) {
+    nav {
+      .title {
+        transform: translateX(calc(50% + 0.75rem)) translateY(1em);
+      }
+
+      a:hover {
+        .icon {
+          transform: translateY(-0.25em);
+        }
+
+        .title {
+          opacity: 1;
+          transform: translateX(calc(50% + 0.75rem)) translateY(0.75em);
+        }
+      }
+    }
+  }
+
+  @media (width <= 42rem) {
+    .side {
+      display: none;
+    }
+  }
+
+  .dark {
+    display: none;
+  }
+
+  :global(.dark) {
+    .light {
+      display: none;
+    }
+
+    .dark {
+      display: inline-block;
+    }
+  }
+</style>

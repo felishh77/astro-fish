@@ -1,0 +1,18 @@
+{
+  "name": "charm-root",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "playground:dev": "pnpm --filter playground dev",
+    "playground:build": "pnpm --filter playground build --outDir ../dist",
+    "package:check": "pnpm --filter astro-charm check",
+    "package:release": "changeset publish",
+    "format": "prettier --write  \"**/*.{js,ts,css,astro}\""
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.7",
+    "astro": "^5.14.5",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}
