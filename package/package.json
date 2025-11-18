@@ -1,6 +1,6 @@
 {
   "name": "astro-fish",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Beautiful and easy-to-use blog theme for Astro built based on Fish.",
   "license": "MIT",
   "author": {
@@ -68,6 +68,7 @@
     "d3": "^7.9.0",
     "fast-glob": "^3.3.3",
     "hastscript": "^9.0.1",
+    "luxon": "^3.7.2",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-components": "^0.3.0",
     "rehype-external-links": "^3.0.0",
