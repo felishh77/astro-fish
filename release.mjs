@@ -18,10 +18,10 @@ try {
   run("git add .");
 
   console.log("📝 Creating conventional commit using Commitizen...");
-  run("npx cz");
+  run("cd package && npx cz");
 
   console.log("⬆️ Pushing to remote...");
-  run("git push");
+  run("cd .. && git push");
 
   console.log("📤 Publishing astro-fish from package/ ...");
   const pkgDir = path.resolve(__dirname, "..", "package");
@@ -32,4 +32,3 @@ try {
   console.error("\n❌ Release failed!", err);
   process.exit(1);
 }
-

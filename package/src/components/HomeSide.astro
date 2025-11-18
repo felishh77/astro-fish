@@ -2,7 +2,11 @@
 import config from "fish:config";
 import { BaseSide } from "fish:components";
 const { useH1 = false } = Astro.props;
+import { getPostEntries } from "../utils/collectionUtils";
 const Title = useH1 ? "h1" : "strong";
+import Heatmap from "../components//Heatmap.svelte";
+
+const posts = await getPostEntries();
 ---
 
 <BaseSide>
@@ -11,6 +15,7 @@ const Title = useH1 ? "h1" : "strong";
     <li class="side-home-sub">{config.side.sub}</li>
     <li class="side-home-bio"><p>{config.side.bio}</p></li>
   </ul>
+  <Heatmap {posts} />
 </BaseSide>
 <style>
   li::marker {

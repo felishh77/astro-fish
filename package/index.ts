@@ -5,6 +5,7 @@ import licenses from "spdx-license-list/simple";
 import icon from "./src/integrations/astro-icon/src/index";
 import pagefind from "astro-pagefind";
 import sitemap from "@astrojs/sitemap";
+import svelte from "@astrojs/svelte";
 
 // shiki transformers
 import { transformerColorizedBrackets } from "@shikijs/colorized-brackets";
