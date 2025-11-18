@@ -1,5 +1,6 @@
 <script lang="ts">
   import Time from "../utils/time";
+  import "uno.css";
 
   let {
     posts,

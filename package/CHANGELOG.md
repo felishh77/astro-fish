@@ -1,5 +1,11 @@
 # astro-fish
 
+## 0.3.8
+
+### Patch Changes
+
+- fix: tiny fix
+
 ## 0.3.7
 
 ### Patch Changes
