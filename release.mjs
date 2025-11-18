@@ -14,6 +14,8 @@ try {
   console.log("🚀 Running changeset...");
   run("npx changeset");
 
+  run("npx changeset version");
+
   console.log("📦 Staging changes...");
   run("git add .");
 
