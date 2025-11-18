@@ -31,7 +31,7 @@
     let gap = Time.diffDays(start, post.data.timestamp);
 
     // Only include posts from the last 100 days
-    if (0 <= gap && gap < days) heatmap[gap].posts.push(posts);
+    if (0 <= gap && gap < days) heatmap[gap].posts.push(post);
   });
 </script>
 

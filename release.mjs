@@ -26,8 +26,7 @@ try {
   run("git push");
 
   console.log("📤 Publishing astro-fish from package/ ...");
-  const pkgDir = path.resolve(__dirname, "..", "package");
-  run("pnpm publish --access public", { cwd: pkgDir });
+  run("cd package && pnpm publish");
 
   console.log("\n🎉 Done! astro-fish published successfully.");
 } catch (err) {
