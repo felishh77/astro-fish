@@ -6,6 +6,8 @@ import icon from "./src/integrations/astro-icon/src/index";
 import pagefind from "astro-pagefind";
 import sitemap from "@astrojs/sitemap";
 import svelte from "@astrojs/svelte";
+import tailwind from "@astrojs/tailwind";
+import UnoCSS from "unocss/astro";
 
 // shiki transformers
 import { transformerColorizedBrackets } from "@shikijs/colorized-brackets";
@@ -165,7 +167,16 @@ const configSchema = z.object({
 const theme = defineTheme({
   name: "fish",
   schema: configSchema,
-  integrations: [icon(), pagefind(), sitemap(), svelte()],
+  integrations: [
+    icon(),
+    pagefind(),
+    sitemap(),
+    svelte(),
+    tailwind(),
+    UnoCSS({
+      injectReset: "@unocss/reset/normalize.css",
+    }),
+  ],
   imports: {
     userCustomStyle: "./__no_match__",
     custom: {

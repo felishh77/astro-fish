@@ -1,5 +1,11 @@
 # astro-fish
 
+## 0.3.4
+
+### Patch Changes
+
+- feat: integrated tailwindcss and unocss
+
 ## 0.3.3
 
 ### Patch Changes
