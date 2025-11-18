@@ -1,5 +1,11 @@
 # astro-fish
 
+## 0.3.5
+
+### Patch Changes
+
+- fix: deprecated tailwind
+
 ## 0.3.4
 
 ### Patch Changes
