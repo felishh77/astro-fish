@@ -164,7 +164,7 @@ const configSchema = z.object({
 const theme = defineTheme({
   name: "fish",
   schema: configSchema,
-  integrations: [icon(), pagefind(), sitemap()],
+  integrations: [icon(), pagefind(), sitemap(), svelte()],
   imports: {
     userCustomStyle: "./__no_match__",
     custom: {
