@@ -21,7 +21,7 @@ try {
   run("cd package && npx cz");
 
   console.log("⬆️ Pushing to remote...");
-  run("cd .. && git push");
+  run("git push");
 
   console.log("📤 Publishing astro-fish from package/ ...");
   const pkgDir = path.resolve(__dirname, "..", "package");
