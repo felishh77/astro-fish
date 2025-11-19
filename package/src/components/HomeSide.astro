@@ -14,8 +14,8 @@ const posts = await getPostEntries();
     <li><Title class="side-home-title">{config.side.title}</Title></li>
     <li class="side-home-sub">{config.side.sub}</li>
     <li class="side-home-bio"><p>{config.side.bio}</p></li>
+    <li class="side-home-heatmap"><Heatmap posts={posts} /></li>
   </ul>
-  <Heatmap posts={posts} />
 </BaseSide>
 <style>
   li::marker {
@@ -41,5 +41,9 @@ const posts = await getPostEntries();
     word-wrap: break-word;
     margin: 2rem 0;
     letter-spacing: normal;
+  }
+
+  .side-home-heatmap {
+    max-width: 100%;
   }
 </style>

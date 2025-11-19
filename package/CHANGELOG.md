@@ -1,5 +1,11 @@
 # astro-fish
 
+## 0.4.4
+
+### Patch Changes
+
+- fix: change heatmap display layer
+
 ## 0.4.3
 
 ### Patch Changes
