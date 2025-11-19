@@ -4,7 +4,6 @@ import { BaseSide } from "fish:components";
 const { useH1 = false } = Astro.props;
 import { getPostEntries } from "../utils/collectionUtils";
 const Title = useH1 ? "h1" : "strong";
-import Heatmap from "../components/Heatmap.astro";
 
 const posts = await getPostEntries();
 ---
@@ -14,7 +13,6 @@ const posts = await getPostEntries();
     <li><Title class="side-home-title">{config.side.title}</Title></li>
     <li class="side-home-sub">{config.side.sub}</li>
     <li class="side-home-bio"><p>{config.side.bio}</p></li>
-    <li class="side-home-heatmap"><Heatmap posts={posts} /></li>
   </ul>
 </BaseSide>
 <style>
@@ -42,8 +40,5 @@ const posts = await getPostEntries();
     word-wrap: break-word;
     margin: 2rem 0;
     letter-spacing: normal;
-  }
-
-  .side-home-heatmap {
   }
 </style>

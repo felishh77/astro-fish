@@ -1,5 +1,11 @@
 # astro-fish
 
+## 0.5.0
+
+### Minor Changes
+
+- revert: totally removed heatmap
+
 ## 0.4.9
 
 ### Patch Changes
